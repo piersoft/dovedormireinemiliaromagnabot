@@ -56,7 +56,7 @@ function start($telegram,$update)
 		exit;
 		}
 		elseif ($text == "🏛 Città") {
-			$reply = "Digita direttamente il nome del Comune dove cerchi una struttura ricettiva.\nEsempio: <b>Fano</b>";
+			$reply = "Digita direttamente il nome del Comune dove cerchi una struttura ricettiva.\nEsempio: <b>Cesena</b>";
 			$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true,'parse_mode'=>"HTML");
 			$telegram->sendMessage($content);
 			$log=$today. ",cityinfo," .$chat_id. "\n";
@@ -139,7 +139,7 @@ if (strpos(strtoupper($filter),strtoupper($text)) !== false ){
 				}
 				}
 				if ($ciclo>=20 && $all==0){
-					$location="Troppe strutture per questa ricerca, ti ho mostrato le prime 20.\nSe proprio vuoi averle tutte <b>(potrebbero essere centinaia ATTENZIONE!!)</b>, allora digita la località anteponendo il carattere !.\nEsempio !fano";
+					$location="Troppe strutture per questa ricerca, ti ho mostrato le prime 20.\nSe proprio vuoi averle tutte <b>(potrebbero essere centinaia ATTENZIONE!!)</b>, allora digita la località anteponendo il carattere !.\nEsempio !Cesena";
 					$content = array('chat_id' => $chat_id, 'text' => $location,'disable_web_page_preview'=>true,'parse_mode'=>"HTML");
 					$telegram->sendMessage($content);
 				$this->create_keyboard_temp($telegram,$chat_id);
